@@ -14,10 +14,10 @@ const router = createBrowserRouter([
     children: [
       {
         path: '',
-        element: <Navigate to="/catalog" replace />
+        element: <Navigate to="/catalogo" replace />
       },
       {
-        path: 'catalog',
+        path: 'catalogo',
         element: <Catalog />
       }
     ]
