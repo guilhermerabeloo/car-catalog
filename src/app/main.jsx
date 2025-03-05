@@ -5,6 +5,8 @@ import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 
 import App from './App.jsx'
 import Catalog from '../components/Catalog.jsx'
+import Estoque from '../components/Estoque.jsx'
+import CadastrarCarro from '../components/CadastrarCarro.jsx'
 
 
 const router = createBrowserRouter([
@@ -19,6 +21,14 @@ const router = createBrowserRouter([
       {
         path: 'catalogo',
         element: <Catalog />
+      },
+      {
+        path: 'estoque',
+        element: <Estoque />
+      },
+      {
+        path: 'cadastrar-carro',
+        element: <CadastrarCarro />
       }
     ]
   }

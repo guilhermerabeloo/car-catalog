@@ -1,0 +1,90 @@
+#container-estoque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 55rem;
+}
+
+#container-conteudo {
+    width: 50%;
+    height: 100%;
+}
+
+#container-apresentacao{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    height: 15%;
+    margin: 30px 30px 30px 30px;
+}
+
+#btn-adicionaCarro {
+    background: none;
+    background-color: black;
+    color: white;
+    height: 2rem;
+    width: 8rem;
+    border-radius: 6px;
+    opacity: 1;
+}
+
+#btn-adicionaCarro:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+
+#container-carros {
+    height: 85%;
+    width: 100%;
+}
+
+.preview-carro {
+    display: flex;
+    height: 11rem;
+    line-height: 1;
+    margin: 1rem 1rem 1.5rem;
+    border: .0625rem solid #e0e4e3;
+}
+
+.foto-carro {
+    width: 30%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: .0625rem solid #e0e4e3;
+}
+
+.foto-carro img {
+    height: 100%;
+    width: 100%;
+}
+
+.info-carro {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: .0625rem solid #e0e4e3;
+}
+
+.info-carro h4 {
+    font-size: 1.4rem;
+    margin: .5rem 0 .5rem 0;
+}
+
+.info-carro .info-motor {
+    font-size: .8rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-carro .info-preco {
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+}
+
+.info-carro .info-kilometragem {
+    font-size: .8rem;
+    margin-top: 2rem;
+}
