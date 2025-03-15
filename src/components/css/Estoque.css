@@ -62,7 +62,7 @@
 .info-carro {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 60%;
     height: 100%;
     padding: 10px;
     box-sizing: border-box;
@@ -88,3 +88,31 @@
     font-size: .8rem;
     margin-top: 2rem;
 }
+
+.botoes-acao {
+    display: flex;
+    width: 10%;
+    height: 100%;
+}
+
+.botoes-acao button {
+    width: 50%;
+    font-size: 1.3rem;
+    background: none;
+    border: none;
+    opacity: 1;
+    background-color: #f0f0f0;
+}
+
+.botoes-acao button:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+
+.botoes-acao button#btn-editarCarro {
+    color: #004ea1;
+} 
+
+.botoes-acao button#btn-excluirCarro {
+    color: #fa0000;
+} 
