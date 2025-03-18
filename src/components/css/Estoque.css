@@ -5,12 +5,12 @@
     height: 55rem;
 }
 
-#container-conteudo {
+#container-estoque #container-conteudo {
     width: 50%;
     height: 100%;
 }
 
-#container-apresentacao{
+#container-estoque #container-apresentacao{
     display: flex;
     align-items: end;
     justify-content: space-between;
@@ -38,7 +38,7 @@
     width: 100%;
 }
 
-.preview-carro {
+#container-estoque .preview-carro {
     display: flex;
     height: 11rem;
     line-height: 1;
@@ -46,7 +46,7 @@
     border: .0625rem solid #e0e4e3;
 }
 
-.foto-carro {
+#container-estoque .foto-carro {
     width: 30%;
     height: 100%;
     padding: 10px;
@@ -54,12 +54,12 @@
     border: .0625rem solid #e0e4e3;
 }
 
-.foto-carro img {
+#container-estoque .foto-carro img {
     height: 100%;
     width: 100%;
 }
 
-.info-carro {
+#container-estoque .info-carro {
     display: flex;
     flex-direction: column;
     width: 60%;
@@ -69,33 +69,33 @@
     border: .0625rem solid #e0e4e3;
 }
 
-.info-carro h4 {
+#container-estoque .info-carro h4 {
     font-size: 1.4rem;
     margin: .5rem 0 .5rem 0;
 }
 
-.info-carro .info-motor {
+#container-estoque .info-carro .info-motor {
     font-size: .8rem;
     margin-bottom: 1.5rem;
 }
 
-.info-carro .info-preco {
+#container-estoque .info-carro .info-preco {
     font-size: 1.2rem;
     margin-bottom: .5rem;
 }
 
-.info-carro .info-kilometragem {
+#container-estoque .info-carro .info-kilometragem {
     font-size: .8rem;
     margin-top: 2rem;
 }
 
-.botoes-acao {
+#container-estoque .botoes-acao {
     display: flex;
     width: 10%;
     height: 100%;
 }
 
-.botoes-acao button {
+#container-estoque .botoes-acao button {
     width: 50%;
     font-size: 1.3rem;
     background: none;
@@ -104,15 +104,15 @@
     background-color: #f0f0f0;
 }
 
-.botoes-acao button:hover {
+#container-estoque .botoes-acao button:hover {
     opacity: .8;
     cursor: pointer;
 }
 
-.botoes-acao button#btn-editarCarro {
+#container-estoque .botoes-acao button#btn-editarCarro {
     color: #004ea1;
 } 
 
-.botoes-acao button#btn-excluirCarro {
+#container-estoque .botoes-acao button#btn-excluirCarro {
     color: #fa0000;
 } 
