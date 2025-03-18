@@ -3,13 +3,17 @@ import { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 import { BsPencilSquare, BsBackspace } from "react-icons/bs";
 import { ModalExclusao } from './ModalExcluirCarro.jsx'
+
 import Header from './Header.jsx'
 import './css/Estoque.css'
+import ModalEdicao from './ModalEditarCarro.jsx';
 
 export default function Catalog() {
     const [carrosCatalogo, setCarrosCatalogo] = useState([]);
     const [exclusao, setExclusao] = useState(false);
+    const [modalEdicao, setModalEdicao] = useState(false);
     const [idDeleteCarro, setIdDeleteCarro] = useState(0);
+    const [editCarro, setEditCarro] = useState({});
 
     useEffect(() => {
         async function fetchCatalog() {
@@ -21,10 +25,14 @@ export default function Catalog() {
     }, [])
 
     const handleClickExclusao = (idCarro) => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
         setIdDeleteCarro(idCarro);
         setExclusao(!exclusao);
-      };
+    };
+
+    const handleClickEdicao = (carroSelecionado) => {
+        setEditCarro(carroSelecionado);
+        setModalEdicao(!modalEdicao);
+    };
 
     return (
         <>
@@ -33,6 +41,11 @@ export default function Catalog() {
                 exclusao={exclusao}
                 idCarro={idDeleteCarro}
                 closeExclusao={(event) => setExclusao(event)}
+            />
+            <ModalEdicao
+                isOpen={modalEdicao}
+                closeEdicao={(event) => setModalEdicao(event)}
+                editCarro={editCarro}
             />
             <div id="container-estoque">
                 <div id="container-conteudo">
@@ -56,7 +69,7 @@ export default function Catalog() {
                                         <p className="info-kilometragem">{carro.mileage} km</p>
                                     </div>
                                     <div className="botoes-acao">
-                                        <button id="btn-editarCarro"><BsPencilSquare /></button>
+                                        <button id="btn-editarCarro" onClick={() => handleClickEdicao(carro)}><BsPencilSquare /></button>
                                         <button id="btn-excluirCarro" onClick={() => handleClickExclusao(carro._id)}><BsBackspace /></button>
                                     </div>
                                 </div>
