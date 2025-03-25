@@ -1,24 +1,37 @@
 import { carCatalogApi } from '../lib/api.js'
 import { useEffect, useState } from 'react'
+import { BsSearch } from "react-icons/bs";
 import Header from './Header.jsx'
 import './css/Catalog.css'
+import ModalDetalhamento from './ModalDetalharCarro.jsx';
 
 export default function Catalog() {
     const [carrosCatalogo, setCarrosCatalogo] = useState([]);
+    const [modalDetalhe, setModalDetalhe] = useState(false);
+    const [idDetalhaCarro, setIdDetalhaCarro] = useState(0);
 
     useEffect(() => {
         async function fetchCatalog() {
             const response = await carCatalogApi.get('/catalogoCarros')
-            console.log(response.data)
             setCarrosCatalogo(response.data)
         }
 
         fetchCatalog()
     }, [])
 
+    const handleClickDetalhamento = (idCarro) => {
+        setIdDetalhaCarro(idCarro);
+        setModalDetalhe(!modalDetalhe);
+    };
+
     return (
         <>
             <Header />
+            <ModalDetalhamento
+                isOpen={modalDetalhe}
+                closeDetalhe={(event) => setModalDetalhe(event)}
+                idCarro={idDetalhaCarro}
+            />
             <div id="container-catalogo">
                 <div id="container-conteudo">
                     <div id="container-apresentacao">
@@ -36,6 +49,9 @@ export default function Catalog() {
                                         <p className="info-motor">{carro.fuel_type} {carro.engine.type}</p>
                                         <p className="info-preco">R$ {carro.price}</p>
                                         <p className="info-kilometragem">{carro.mileage} km</p>
+                                    </div>
+                                    <div className="botoes-acao">
+                                        <button id="btn-detalharCarro" onClick={() => handleClickDetalhamento(carro._id)}><BsSearch  /></button>
                                     </div>
                                 </div>
                             )
